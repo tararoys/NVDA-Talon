@@ -30,15 +30,27 @@ I call this this script set 'small' and 'lightweight' because all it does is all
 This script set has four core features:  
 
 ### 1. Sleeping on Startup
+
   When Talon is started, it will start in sleep mode.  This means NVDA will not be able to immediately give it orders.  The component that does this is located in nvda.py.  https://github.com/tararoys/NVDA-Talon/blob/50d7233d8fa492bb5e2fc48b3636f614e1a66e4f/nvda.py#L51-L55
 
-### 2. Listening when you say 'Listen'  When in sleep mode, Talon is set up to ignore everything that does not start with the word 'listen'.  This setup is accomplished in the three 'momentary' files momentary.py, momentary.talon, and momentary-command.talon.  In order to get your computer to listen you you, you have to format your commands like 'listen one' or 'listen tab' or 'listen nvda f12'  
+### 2. Listening when you say 'Listen' 
+
+When in sleep mode, Talon is set up to ignore everything that does not start with the word 'listen'.  This setup is accomplished in the three 'momentary' files momentary.py, momentary.talon, and momentary-command.talon.  In order to get your computer to listen you you, you have to format your commands like 'listen one' or 'listen tab' or 'listen nvda f12'  
 
 ### 3. Speaking the NVDA Key
 
  To press a keyboard shortcut that includes the nvda key, you say NVDA and then you say the shortcut.  For example, the keyboard shortcut nvda-1 toggles on the nvda speak help feature, the one that lets you press keyboard shortcuts and hear a description of what they are supposed to do without actually doing them.  To toggle that on and off with Talon voice control under this setup, you wuld say 'listen nvda one'
 
-### Translating your keyboard shortcuts into their Equivalent Talon Commands
+
+
+### 4. NVDA Stops Talking When You Hiss At it.
+
+Talon has the ability to recognize noises as well as voice commands.  This script set wired talon's 'hissing' noise to NVDA's shift key.
+
+
+# Essential Knowledge:  
+
+## Translating your keyboard shortcuts into their Equivalent Talon Commands
 
 There are two main 'gotchas' when verbalizing an nvda command- first, Talon has it's own phonetic alphabet for all the letters, and second, the windows key is named 'super.' 
 
@@ -77,9 +89,9 @@ zip 	z
 
 The other main gotcha is that the talon name for the windows key is 'super', so if you are trying to access the windows start menu by pressing the windows key, you will need to say 'listen super' 
 
-## NVDA Stops Talking When You Hiss At it.
+## Learning To Make the Noises to Get NVDA to stop Talking
 
-Talon has the ability to recognize noises as well as voice commands.  This script set wired talon's 'hissing' noise to NVDA's shift key.
+This is set up to toggle speech on and off on two noises: a hiss and a pop.  The reason for these two noises is because these are the only two noises that are currently built into the free version of Talon.  If you want any other noises, you have to 1. pay for the current talon Beta and 2. do a boatload of configuration.  So if you want to not spend money and time, it's important to learn to make the two free noises the free version of Talon currently recognizes. 
 
 in particular, when talon recognizes you making the following noise: 
 
@@ -112,6 +124,8 @@ https://noise.talonvoice.com/static/previews/pop.mp3?4ae02cb5221d89545ee24c9d287
 
 
 
-##Random musings:  
+## Setting Up Other Noises
 
-It is *possible* to wire other sounds to do the same job, but at the moment that requires at least double the setup because it requires installing the whole parrot.py system. https://github.com/chaosparrot/parrot.py/blob/master/docs/TALON_VOICE.md  So if I wanted to use SHHHHHH instead of ssssss as my noise, I would need to follow all the setup instructions to configure parrot.py.  
+It is *possible* to wire other sounds to do the same job. I, however, don't bother.  
+
+If you do wish to bother- for example, if you have time and money and want to make it respont to a shhh noise,  see https://github.com/chaosparrot/parrot.py/blob/master/docs/TALON_VOICE.md  
